@@ -135,7 +135,7 @@ Citrix_Scripts/2N_CreateLIf.xml or press ‘s’ and return to skip this script`
 	
 	![Figure 11](images/Figure11.png)
 
-	> **NOTE**: W ait until both devices in the device cluster are in a stable state before proceeding. It may take up to 30 seconds and you may need to click the   icon.
+	> **NOTE**: W ait until both devices in the device cluster are in a stable state before proceeding. It may take up to 30 seconds and you may need to click the refresh icon.
 
 15. Create the Application Profile as follows:
 
