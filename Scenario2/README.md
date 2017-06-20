@@ -6,21 +6,23 @@ The purpose of this scenario is to use a preconfigured Python script to create o
 
 ![Figure1](images/Figure1.png)
 
-> NOTE: The Python script method calls individual XML scripts to create a series of objects. To pause the script and create an object using an APIC wizard, see the instructions inline. Objects that can be created via wizard using this script are indicated with (** * **) in the list below.
+> NOTE: The Python script method calls individual XML scripts to create a series of objects. To pause the script and create an object using an APIC wizard, see the instructions inline. Objects that can be created via wizard using this script are indicated with ( * ) in the list below.
 
 **The Python script performs the following functions:**
 
 * Creates a Tenant
 * Imports Citrix Device Package
-* Creates L4-L7 Device Cluster*****
-* Create Concrete Device
-* Create Logical Interfaces
-* Connect Interfaces of Logical to Concrete Device
+* Creates L4-L7 Device Cluster*
+    * Create Concrete Device
+    * Create Logical Interfaces
+    * Connect Interfaces of Logical to Concrete Device
 * Creates the Application Profile
 * Creates the Security Contract
 * Creates the Service Graph
-* Attaches Service Graph to Contract*****
-Use the User Interfaces of Cisco APIC and NetScaler VPX to confirm deployed settings:
+* Attaches Service Graph to Contract*
+
+**Use the User Interfaces of Cisco APIC and NetScaler VPX to confirm deployed settings:**
+
 * View VLAN’s in APIC
 * View Load Balancing Virtual Server and VLAN’s in NetScaler VPX
 * View Port Group mappings for VPX
@@ -43,17 +45,17 @@ Manual Configuration of Individual Objects  | Low  | Use an APIC wizard and the 
  ![Figure2](images/Figure2.png)
 6. Login to PuTTy (**user01/user01**) and place it so that both the PuTTY window and the APIC directories are visible.
  ![Figure3](images/Figure3.png)
-7. From the command line type `./request.py Citrix_Scripts/Build_Citrix_VPX.cfg` and hit **<Enter>**. 
+7. From the command line type `./request.py Citrix_Scripts/Build_Citrix_VPX.cfg` and hit **< Enter >**. 
 	
 	> **NOTE:** To show the XML code as the Python script calls each XML script, substitute
 	`./xml_request.py Citrix_Scripts/Build_Citrix_VPX.cfg` for the above command.
 	 ![Figure4](images/Figure4.png)
 	> This is an example of the partial XML output for the `Build_Citrix_VPX.xml` script. 
 	
-	The `Build_Citrix_VPX.cfg` script utilizes a series of XML scripts to perform the 	necessary configuration steps. It will pause between each of the XML scripts, and the user can either press **<Enter>** to run the script, or type s to skip the script and configure the object via a wizard. While the script is running, a brief description display what that script is doing, while the APIC window updates in real-time. When a script completes successfully, the success code `200` will appear onscreen.
+	The `Build_Citrix_VPX.cfg` script utilizes a series of XML scripts to perform the 	necessary configuration steps. It will pause between each of the XML scripts, and the user can either press **< Enter >** to run the script, or type **s** to skip the script and configure the object via a wizard. While the script is running, a brief description display what that script is doing, while the APIC window updates in real-time. When a script completes successfully, the success code `200` will appear onscreen.
 	![Figure5](images/Figure5.png)
 
-    > The following step creates the tenant in APIC. To perform this procedure manually, type **s** and hit **enter** at the prompts for the `1N_Tenant.xml` script.
+    > The following step creates the tenant in APIC. To perform this procedure manually, type **s** and hit **< Enter >** at the prompts for the `1N_Tenant.xml` script.
 
 8. Create the **Tenant**.
 
@@ -154,17 +156,17 @@ Credentials checkbox is checked. Click **Login**.
 
 18. Navigate to Home > Inventory > Networking to see the EPGs.
   ![Figure11](images/Figure11.png)
-  > **Note: The next step runs the script that attaches the Service Graph to the Contract. To perform the procedure manually, type **s** at the prompts for the `Citrix_Scripts/1N_AttachWebGraph.xml` script:
+  > **Note: The next step runs the script that attaches the Service Graph to the Contract. [To perform the procedure manually](../Appendix/Appendix-E), type **s** at the prompts for the `Citrix_Scripts/1N_AttachWebGraph.xml` script:
 
 19. Attach the **Service Graphs** to the **Visa** tenant, as follows:
 
-	a. Still in **Tenants > Visa**, expand **L4-L7 Services > Deployed Service Graph Instances**, which is empty.
+	a. Still in **Tenants > Visa**, expand **L4-L7 Services > Deployed Graph Instances**, which is empty.
 
 	b. Return to the PuTTY window and hit <**Enter**> at the `Hit return to process Citrix_Scripts/ 1N_AttachGraphToContract.xml or press ‘s’ and return to skip this script` prompt.
 
-	c. Allow a few seconds for the script to finish. **webCtrct-WebGraph-Visactx1** drops into the **Deployed Service Graph** directory, showing the association.
+	c. Allow a few seconds for the script to finish. **webCtrct-WebGraph-Visactx1** drops into the **Deployed Graph** directory, showing the association.
 
-20. Click the **Deployed Service Graph Instances** folder to show that the contract is listed in applied state.
+20. Click the **Deployed Graph Instances** folder to show that the contract is listed in applied state.
   ![Figure12](images/Figure12.png)
 
 21. Return to the VMWare Client to see that the new port-profiles have been created.
@@ -189,7 +191,7 @@ Credentials checkbox is checked. Click **Login**.
 27. Click **webCtrct-WebGraph-Visactx1** to see the topology of the deployed Service Graph.
   ![Figure18](images/Figure18.png)
 
-28. Expand Deployed Devices and click **ADCCluster1-Visactx1** to review VLANs.
+28. Expand **Deployed Devices** and click **ADCCluster1-Visactx1** to review VLANs.
   ![Figure19](images/Figure19.png)
 
 29. Verify that the MAC addresses and the correct Port-Profiles show:

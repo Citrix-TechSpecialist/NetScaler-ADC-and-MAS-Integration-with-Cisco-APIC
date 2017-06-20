@@ -53,15 +53,16 @@ Use the User Interfaces of Cisco APIC, NetScaler VPX, and NetScaler MAS to confi
   >   ![Screenshot5](images/Screenshot5.png)
   >This is an example of the partial XML output for the `Build_Citrix_VPX_MAS.xml` script.
 
-    The `Build_Citrix_VPX_MAS.cfg` script utilizes a series of XML scripts to perform the   necessary configuration steps. It will pause between each of the XML scripts, and the   user can either press **< Enter >** to run the script, or type s to skip the script   and configure the object via a wizard. While the script is running, a brief   description will display what that script is doing, while the APIC window updates in   real-time. When a script completes successfully, the success code `200` will appear   onscreen.
+ The `Build_Citrix_VPX_MAS.cfg` script utilizes a series of XML scripts to perform the   necessary configuration steps. It will pause between each of the XML scripts, and the   user can either press **< Enter >** to run the script, or type s to skip the script   and configure the object via a wizard. While the script is running, a brief   description will display what that script is doing, while the APIC window updates in   real-time. When a script completes successfully, the success code `200` will appear   onscreen.
     ![Screenshot6](images/Screenshot6.png)
-    > **NOTE**: The following step creates the tenant in APIC. To perform this procedure   manually, type **s** and hit <**Enter**> at the prompts for the **1N_Tenant.xml**   script.
+
+ > **NOTE**: The following step creates the tenant in APIC. To perform this procedure   manually, type **s** and hit <**Enter**> at the prompts for the **1N_Tenant.xml**   script.
 
 7. Create the **Tenant**.
 
     * In the APIC top menu, select **TENANTS**.
     ![Screenshot7](images/Screenshot7.png)
-    * Return to the PuTTY window and hit <**Enter**> at the ``Hit return to process   Citrix_Scripts/1N_Tenant.xml** or **press‘s**’ and return to skip this script`prompt.
+    * Return to the PuTTY window and hit <**Enter**> at the `Hit return to process   Citrix_Scripts/1N_Tenant.xml** or **press‘s**’ and return to skip this script`prompt.
     * The **Visa** tenant is created and displayed in the top menu. Click Refresh to   display it in the tenant list. (If a **Server Side Error** message is generatedwait     a few seconds before refreshing again.)
     ![Screenshot8](images/Screenshot8.png)
     * Double-click the newly created Visa tenant.
@@ -76,9 +77,9 @@ Use the User Interfaces of Cisco APIC, NetScaler VPX, and NetScaler MAS to confi
     
     * Expand the **L4-L7 Services Device Types** folder and show that no packages are   present.
     
-    * Return to the PuTTY window and hit <Enter> at the ``Hit return to process   Citrix_Scripts/hybridModeDevicePackage-11.1-49.16.zip` or press ‘**s**’ and return to   skip this script` prompt.
+    * Return to the PuTTY window and hit <Enter> at the ``Hit return to process   Citrix_Scripts/hybridModeDevicePackage-11.1-49.16.zip` or press ‘**s**’ and return to   skip this script`` prompt.
     
-    * The Citrix-NetScalerMAS-1.0 device package appears in the L4-L7 Services Device   Types directory as it is created.
+    * **The Citrix-NetScalerMAS-1.0** device package appears in the **L4-L7 Services Device Types** directory as it is created.
     
      ![Screenshot9](images/Screenshot9.png)
 

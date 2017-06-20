@@ -68,7 +68,7 @@ Use the **User Interfaces** of Cisco APIC, NetScaler VPX, and NetScaler MAS to c
     
     > **NOTE:** To show the XML code as the Python script calls each XML script, substitute `./xml_request.py Citrix_Scripts/Build_ASA_Citrix_MAS.cfg` for the above command. This is an example of the partial XML output fo    the **Build_ASA_Citrix_MAS.xml** script.
 
-        ![Build_ASA_Citrix_MAS.cfg](images/Build_ASA_Citrix_MAS.cfg.png)
+     ![Build_ASA_Citrix_MAS.cfg](images/Build_ASA_Citrix_MAS.cfg.png)
     
     The **Build_ASA_Citrix_MAS.cfg** script utilizes a series of XML scripts to perform the necessary configuratio  steps. It will pause between each of the XML scripts, and the user can either press < **Enter** > to run the script, or type **s** to skip the script and configure the object via a wizard. While the script is running, brief description will display what that script is doing, while the APIC window updates in real-time. When script completes successfully, the success code 200 will appear onscreen.
     
